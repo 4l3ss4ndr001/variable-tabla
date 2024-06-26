@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabla de multiplicar</title>
+    <script>
+        function calcular(){
+            //obtener el numero 
+            let xn = parseInt(document.getElementById("txtnum").value);
+            //validar
+            if (xn>0){
+                let linea=" ";
+                for(let i=1; i<=12;i++){
+                    linea = linea + xn + " x " + i + " = " +xn*i +"<br>";
+                }
+                document.getElementById("zona").innerHTML = linea;
+            }else{
+                alert("verificar numero mayor a 0");
+            }
+        }
+        function limpiar(){
+            document.getElementById("txtnum").value="";
+        }
+    </script>
+</head>
+<body>
+    <table style="margin: 0 auto; text-align: center;">
+        <tr>
+            <td>numero</td>
+            <td><input type="text" id="txtnum"></td>
+        </tr>
+        <tr>
+            <td><button onclick="calcular();">calcular</button></td>
+            <td><button onclick="limpiar();">limpiar</button></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="zona">
+
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>
